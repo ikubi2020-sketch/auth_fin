@@ -1,5 +1,7 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import zod from "zod"
+
 
 
 export function createHash(password) {
@@ -23,6 +25,11 @@ export function verifyToken(token) {
 }
 
 
+
+export async function logger(req, res, next) {
+    console.log(req.method, req.url)
+    next()
+}
 
 
 

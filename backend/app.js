@@ -3,14 +3,19 @@ import cors from "cors"
 import dotenv from "dotenv/config"
 import { errorHandler } from "./middleware/middleware.js"
 dotenv.config()
+import {router} from "./ctrl/authCtrl.js"
+import { logger } from "./utils/utils.js"
 
-const app = express()
+
 const port = Number(process.env.PORT) || 3010
 
-app.use(cors({}))
+const app = express()
 
-app.use("/users" , ()=>{})
+app.use(logger)
 
+app.use(cors())
+
+app.use("/users" , router)
 
 app.use(errorHandler)
 
