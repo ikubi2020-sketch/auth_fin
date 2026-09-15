@@ -7,7 +7,7 @@ export function createHash(password) {
     return hash
 }
 
-export function createHash(password, passwordHash) {
+export function comparePassword(password, passwordHash) {
     const valid = bcrypt.compareSync(password, passwordHash)
     return valid
 }
@@ -17,7 +17,7 @@ export function createToken(userId) {
     return token
 }
 
-export function createToken(token) {
+export function verifyToken(token) {
     const valid = jwt.verify(token, process.env.KEY_JWT)
     return valid
 }
