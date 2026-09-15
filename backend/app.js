@@ -4,8 +4,7 @@ import dotenv from "dotenv/config"
 import { errorHandler } from "./middleware/middleware.js"
 dotenv.config()
 import {router} from "./ctrl/authCtrl.js"
-import { logger } from "./utils/utils.js"
-
+import { logger } from "./middleware/middleware.js"
 
 const port = Number(process.env.PORT) || 3010
 

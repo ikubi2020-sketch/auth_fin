@@ -1,3 +1,4 @@
+import {comparePassword, createHash, createToken, verifyToken} from "./middleware/authMiddleware.js"
 
 
 async function registerUser(user) {
