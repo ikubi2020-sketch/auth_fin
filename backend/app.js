@@ -6,7 +6,7 @@ import routerAuth from "./ctrl/authCtrl.js"
 import { logger } from "./middleware/middleware.js"
 import  routerUser  from "./ctrl/userCtrl.js"
 
-const port = Number(process.env.PORT) || 3005
+const port = Number(process.env.PORT) || 3010
 
 const app = express()
 
