@@ -27,4 +27,4 @@ router.post("/login",validation(validLogin),async (req , res, next)=>{
     }
 })
 
-export {router}
+export default router

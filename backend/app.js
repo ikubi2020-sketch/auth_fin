@@ -2,8 +2,9 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv/config"
 import { errorHandler } from "./middleware/middleware.js"
-import {router} from "./ctrl/authCtrl.js"
+import routerAuth from "./ctrl/authCtrl.js" 
 import { logger } from "./middleware/middleware.js"
+import  routerUser  from "./ctrl/userCtrl.js"
 
 const port = Number(process.env.PORT) || 3005
 
@@ -15,7 +16,9 @@ app.use(logger)
 
 app.use(cors())
 
-app.use("/auth" , router)
+app.use("/auth" , routerAuth)
+
+app.use("/users", routerUser)
 
 app.use(errorHandler)
 

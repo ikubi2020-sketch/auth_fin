@@ -21,3 +21,14 @@ export async function createUser(user) {
         throw error
     }
 }
+
+
+
+export async function getUsers() {
+    try {
+        const users = await authCollection.find().toArray()
+        return users
+    } catch (error) {
+        throw error
+    }
+}
