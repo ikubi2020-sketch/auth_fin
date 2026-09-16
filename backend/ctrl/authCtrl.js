@@ -20,10 +20,9 @@ router.post("/register",validation(validUser),async (req , res, next)=>{
 router.post("/login",validation(validLogin),async (req , res, next)=>{
     const userLogin = req.body
     try {
-        const resultMessage = await loginServ(userLogin)
-        res.status(201).json({message : resultMessage})
+        const token = await loginServ(userLogin)
+        res.status(201).json({token : token})
     } catch (error) {
-        console.log(error)
         next(error)
     }
 })

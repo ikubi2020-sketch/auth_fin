@@ -5,7 +5,7 @@ import { errorHandler } from "./middleware/middleware.js"
 import {router} from "./ctrl/authCtrl.js"
 import { logger } from "./middleware/middleware.js"
 
-const port = Number(process.env.PORT) || 3010
+const port = Number(process.env.PORT) || 3005
 
 const app = express()
 

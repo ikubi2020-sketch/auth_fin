@@ -13,8 +13,8 @@ export function comparePassword(password, passwordHash) {
     return valid
 }
 
-export function createToken(userId) {
-    const token = jwt.sign({userId}, process.env.KEY_JWT, {expiresIn : process.env.JWT_EXPIRE})
+export function createToken(userKey) {
+    const token = jwt.sign({userKey}, process.env.KEY_JWT, {expiresIn : process.env.JWT_EXPIRE})
     return token
 }
 
