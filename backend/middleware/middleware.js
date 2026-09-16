@@ -45,6 +45,18 @@ export function validation(schema) {
         next()
         }}
 
+export function cleanUsers(users) {
+    const noHashUsers = users.map((user)=>{
+        delete user.hash
+        return user
+    })
+    const cleanUsers = noHashUsers.map((user)=>{
+        user.id = user._id
+        delete user._id
+        return user
+    })
+    return cleanUsers
+}
 
 
 
