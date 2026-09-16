@@ -1,8 +1,8 @@
-import { db, Db } from "./dbConnection.js";
+import { db} from "./dbConnection.js";
 
 const authCollection = db.collection("auth_collection")
 
-async function getByEmail(email) {
+export async function getByEmail(email) {
     try {
         const user = await authCollection.findOne({email : email})
         return user
@@ -12,7 +12,7 @@ async function getByEmail(email) {
 }
 
 
-async function createUser(user) {
+export async function createUser(user) {
     const myUser = user
     try {
         const user = await authCollection.insertOne(myUser)

@@ -28,6 +28,14 @@ export const validUser = zod.object({
     "password" : zod.string({message  :  "password must be a string"}).min(8, "password must be 8 characters").max(50, "password must be less then 50 characters"),
 })
 
+
+export const validLogin = zod.object({
+    "email" : zod.email({message : "email must be a string of a valid email"}).max(50, "email must be less then 50 characters"),
+    "password" : zod.string({message  :  "password must be a string"}).min(8, "password must be 8 characters").max(50, "password must be less then 50 characters"),
+})
+
+
+
 export function validation(schema) {
     return (req, res, next)=>{
         const result = schema.safeParse(req.body)
