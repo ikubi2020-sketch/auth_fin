@@ -12,7 +12,7 @@ type responseError = {
 
 
 export default function Login() {
-    const [token , setToken] = useState<response | responseError | null>(null)
+    const [token , setToken] = useState<response | null>(null)
     const [message , setMessage] = useState<responseError | null>(null)
     const email  =  useRef("") 
     const password  = useRef("")
@@ -25,7 +25,7 @@ export default function Login() {
         
         setToken(response.data)
         if(response.data.token)
-         return <Navigate  to="/users"/>
+        {localStorage.setItem("token" , token?.token!); return <Navigate  to="/users"/>}
         else {setMessage(response.data.message)}
     }
   return (
